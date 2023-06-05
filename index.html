@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AGSL Space - Cronômetro</title>
+
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="imgs/favicon2.png">
+
+
+</head>
+<body>
+
+	<main>
+		<div id="div-principal">
+			
+			<div id="div-swicth-buttons">
+				<button class="switch-buttons" onclick="mudarParaCronometro()"><p class="switch-buttons-text">Cronômetro</p></button>
+				<button class="switch-buttons" onclick="mudarParaTimer()"><p class="switch-buttons-text">Timer</p></button>
+			</div>
+
+			<!-- CRONÔMETRO -->
+			<div id="div-cron">
+				<h1>Cronômetro AGSL</h1>
+				<p id="cron">00:00:00</p>
+
+				<div class="buttons">
+					<button id="pause" class="btn-auxiliar" onclick="parar()">
+						<span class="material-symbols-outlined">stop_circle</span>
+					</button>
+
+					<button id="start" class="start" onclick="comecarContagem()">
+						<span class="material-symbols-outlined">play_arrow</span>
+					</button>
+
+					<button id="restart" class="btn-auxiliar" onclick="resetar()">
+						<span class="material-symbols-outlined">device_reset</span>
+					</button>
+					
+				</div>
+			</div>
+
+			<!-- TIMER -->
+			<div id="div-timer">
+				<h1>Timer AGSL</h1>
+
+				<div id="set-timer">
+					<p id="attention-text">Números Inválidos</p>
+					<form id="form-timer">
+						<div class="input-number">
+							<p class="legenda">HORAS</p>
+							<input id="horasTimer" class="input-field" type="number" name="horas" step='1' min=0 max=23 value=0>	
+						</div>
+
+						<div class="input-number">
+							<p class="legenda">MINUTOS</p>
+							<input id="minutosTimer" class="input-field" type="number" name="minutos" step='1' min=0 max=59 value=0>	
+						</div>
+
+						<div class="input-number">
+							<p class="legenda">SEGUNDOS</p>
+							<input id="segundosTimer" class="input-field" type="number" name="segundos" step='1' min=0 max=59 value=0>	
+						</div>
+					</form>
+
+					<button id="iniciar-timer" onclick="comecarTimer()"><p id="iniciar-timer-text">INICIAR</p></button>
+				</div>
+				
+
+				<div id="timer-on">
+					<p id="timer-text">00:00:00</p>
+
+					<div class="buttons">
+						<button id="cancelarTimer" class="btn-auxiliar-timer" onclick="resetarTimer()">
+							<p>VOLTAR</p>
+						</button>
+						<button id="start" class="start" onclick="comecarTimer()">
+								<span class="material-symbols-outlined">play_arrow</span>
+						</button>
+						<button id="pararTimer" class="btn-auxiliar-timer" onclick="pararTimer()">
+							<p>PARAR</p>
+						</button>
+						
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</main>
+	<footer>
+		<p id="copy"> &copy; AGSL Space</p>
+	</footer>
+	
+	<script src="script/scriptCronometro.js" type="text/javascript"></script>
+	<script src="script/scriptTimer.js" type="text/javascript"></script>
+
+</body>
+</html>
